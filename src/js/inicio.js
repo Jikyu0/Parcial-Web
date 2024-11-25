@@ -20,7 +20,7 @@ function ToLogin() {
 
 // Función para redirigir al perfil
 function goToProfile() {
-    window.location.href = '/perfil.html';  // Cambia a la URL de tu perfil
+    window.location.href = 'perfil.html';  // Cambia a la URL de tu perfil
 }
 
 function logout() {
@@ -28,5 +28,5 @@ function logout() {
     localStorage.removeItem('userLoggedIn');
     
     // Redirigir a la página de login
-    window.location.href = '/inicio.html';
+    window.location.href = 'inicio.html';
 }
