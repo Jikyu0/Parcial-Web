@@ -15,7 +15,7 @@ window.onload = function() {
 
 // Función para redirigir a la página de login
 function ToLogin() {
-    window.location.href = 'Registro_Login.html';
+    window.location.href = '7Registro_Login.html';
 }
 
 // Función para redirigir al perfil
