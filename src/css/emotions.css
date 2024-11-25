@@ -1,0 +1,31 @@
+
+
+.emotions h1 {
+    font-size: 45px;
+    color: #4A3780; /* Un morado oscuro */
+}
+.emotion p {
+    font-size: 20px;
+    color: #4A3780; /* Un morado oscuro */
+}
+
+.emotions-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.emotion {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.emotion:hover {
+    transform: scale(1.1);
+}
+
+.emotion.active {
+    transform: scale(1.2);
+}

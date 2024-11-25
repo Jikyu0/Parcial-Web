@@ -1,0 +1,86 @@
+/* Estructura del acordeón lateral */
+.accordion-container {
+    margin-top: 10px; /* Espacio debajo del header */
+    display: flex;
+    height: calc(60vh - 20px); /* Altura restante de la ventana menos el header */
+}
+
+/* Estilo para los botones del acordeón */
+.accordion-buttons {
+    background-color: #F5E5EC;
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centra los botones verticalmente */
+    align-items: center; /* Centra los botones horizontalmente */
+    border-right: 2px solid #2E256D;
+    gap: 20px; /* Espaciado entre los botones */
+}
+
+/* Estilo base para los botones */
+.accordion-buttons button {
+    background-color: #2E256D; /* Color base para todos los botones */
+    border: none;
+    border-radius: 8px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Estilo cuando se pasa el ratón por encima */
+.accordion-buttons button:hover,
+.accordion-buttons button:focus {
+    background-color: #5e4ec1; /* Cambiar color al pasar el ratón */
+}
+
+/* Estilo para el botón activo */
+.accordion-buttons button.active {
+    background-color: #5e4ec1; /* Color para el botón activo */
+    color: #fff;
+}
+
+
+
+/* Redondeo opcional de los bordes */
+.accordion-buttons button {
+    border-radius: 8px;
+    background-color: #2E256D; /* Color inicial del fondo */
+}
+
+/* Ajustes para imágenes dentro de los botones */
+.accordion-buttons button img {
+    
+    max-width: 70%; /* Limitar el ancho de la imagen */
+    height: auto; /* Mantener proporción */
+}
+
+/* Estilo para el contenido del acordeón */
+.accordion-content {
+    flex-grow: 1; /* Ocupa el espacio restante */
+    padding: 20px;
+    background-color: #F5E5EC;
+    overflow-y: auto; /* Permitir scroll si hay mucho contenido */
+}
+
+/* Espaciado entre secciones del contenido */
+.accordion-body {
+    margin-top: 30px;
+}
+
+/* Ajustes específicos para los SVG */
+.accordion-buttons button img,
+.accordion-buttons button svg {
+    display: block; /* Asegura que no haya márgenes extras */
+    margin: 50px; /* Centra el SVG dentro del botón */
+}
+
+/* Asegúrate de que el contenedor tenga espacio suficiente */
+.container {
+    margin-top: 20px;
+    
+}
+

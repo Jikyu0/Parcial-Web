@@ -1,0 +1,41 @@
+
+.carousel {
+    margin-top: 40px; 
+}
+
+.carousel-item img {
+    max-height: 500px; /* Limita la altura */
+    object-fit: cover; /* las imágenes se ajusten sin deformarse */
+}
+    
+.carousel-control-prev,
+.carousel-control-next {
+    width: 5%; /* Ajusta el ancho del área donde aparecen las flechas */
+}
+
+.carousel-caption-custom {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 10;
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.carousel-caption-custom h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.carousel-caption-custom p {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.carousel-caption-custom .btn {
+    font-size: 1rem;
+    padding: 10px 20px;
+}

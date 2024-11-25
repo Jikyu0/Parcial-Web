@@ -1,0 +1,94 @@
+.tracker h1 {
+    font-size: 45px;
+    color: #4A3780; 
+}
+
+
+.tracker p {
+    font-size: 20px;
+    color: #6b5c8c;
+    margin-bottom: 10px;
+}
+
+.tracker-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.habit-btn {
+    background-color: #a59dc8;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 8px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.habit-btn:hover {
+    background-color: #6b5c8c;
+}
+
+.add-habit-btn {
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 50%;
+    font-size: 2em;
+    font-weight: bold;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.add-habit-btn:hover {
+    transform: scale(1.2);
+}
+
+/*    Stilo Modal tracker actividades */
+
+.modal-content{
+    background-image: url(/src/img/fondo/fondomorado.png);
+    background-size: cover;
+}
+
+.modal-header button{
+    background-color: #fff !important;
+}
+
+.modal label{
+    font-size: 1.5em;
+}
+
+.modal{
+    color: #fff;
+}
+
+.modal input{
+    width: 50%;
+}
+
+#exampleCheck1{
+    width: 15px !important;
+}
+
+#horas{
+    font-size: 1em;
+}
+
+#how{
+    margin-top: 1em;
+}
+
+#spaceTracker{
+    margin-top: 20px;
+}
+
+#Tracker{
+    margin: 15px;
+}

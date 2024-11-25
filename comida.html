@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spoonacular Food API</title>
+  <link rel="stylesheet" href="/src/css/main.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    #results {
+      margin-top: 20px;
+    }
+    .recipe {
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Spoonacular Food API - Search Recipes</h1>
+  <!--form id="searchForm">
+    <input type="text" list="comida" id="query" placeholder="Enter a food (e.g., pasta, salad)" required />
+    <button type="submit">Search</button>
+  </form>
+  <div id="results"></div-->
+
+  <!-- Boton referencia posible para pagina -->
+  <form id="searchForm">
+    <div class="container" id="container_Search">
+        <input class="checkbox" type="checkbox" checked="">
+        <div class="mainbox">
+            <div class="iconContainer">
+                <svg viewBox="0 0 512 512" height="1em" xmlns="http://www.w3.org/2000/svg" class="search_icon">
+                    <path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"></path>
+                </svg>
+            </div>
+            <input class="search_input" id="query" placeholder="Search" type="text">
+        </div>
+    </div>
+</form>
+
+<div id="results"></div>
+    
+    <!--
+        <h1>Buscador de Alimentos</h1>
+        <input type="text" id="query" placeholder="Ingresa un alimento...">
+        <div id="results"></div-->
+    
+<div id="desayuno"> 
+  
+<button onclick="AddFood()" class="icon-btn add-btn" id="plusFood">
+    <div class="add-icon"></div>
+    <div class="btn-txt">Add Food</div>
+</button>
+</div>
+
+  <script src="/src/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./src/img/icon/icono.png" type="image/x-icon" />
+    <title>Registrar tus rutinas</title>
+    <!-- Enlace de Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="/src/css/styles.css" />
+    <link rel="stylesheet" href="/src/css/header.css" />
+    <link rel="stylesheet" href="/src/css/footer.css" />
+    <link rel="stylesheet" href="/src/css/button.css" />
+    <link rel="stylesheet" href="/src/css/acordeon.css" />
+    <link rel="stylesheet" href="/src/css/todoList.css" />
+    <link rel="stylesheet" href="/src/css/emotions.css" />
+    <link rel="stylesheet" href="/src/css/menu.css" />
+    <link rel="stylesheet" href="/src/css/tracker.css" />
+    <link rel="stylesheet" href="/src/css/location.css" />
+    <link rel="stylesheet" href="/src/css/graficas.css" />
+    <link rel="stylesheet" href="/src/css/responsiveActividades.css">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://www.jsdelivr.com/package/npm/chart.js?path=dist"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.js"></script>
+    <script async
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDieGvTRG7H1PivYYHyOIDwd1O0GhRsqOE&callback=initMap">
+    </script>
+
+    <style>
+      #map {
+        height: 250px;
+        width:50%;
+      }
+
+      #places-list {
+        margin-top: 20px;
+      }
+    </style>
+
+  </head>
+
+  <body>
+    <!-- Header con navegación -->
+    <!--header style="height: 60px;">
+    <div class="icons-container">
+      <div class="search-icon">
+        <a href="index.html"><img src="./src/img/icon/IconamoonHomeBold.svg" alt="Buscar"></a>
+      </div>
+    </div>
+    <div class="logo">
+      <img src="./src/img/icon/logo.png" alt="Logotipo">
+    </div>
+  </header-->
+
+    <nav class="navbar navbar-expand-lg">
+      <div class="container-fluid">
+        <div class="search-icon">
+          <a href="/index.html"
+            ><img src="./src/img/icon/IconamoonHomeBold.svg" alt="Buscar"
+          /></a>
+        </div>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <form class="d-flex" role="search">
+            <div class="logo">
+              <img src="/src/img/icon/logo.png" alt="Logotipo" />
+            </div>
+          </form>
+        </div>
+
+        <ul>
+          <div class="dropdown" id="user">
+            <button
+              class="btn dropdown-toggle"
+              onclick="modaldisplay()"
+              type="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <img
+                id="logUser"
+                src="/src/img/icon/avatar-de-mujer.png"
+                alt="user"
+              />
+            </button>
+            <ul class="dropdown-menu">
+              <li id="BPerfil"><a class="dropdown-item" href="">Profile</a></li>
+              <li id="BAyuda"><a class="dropdown-item" href="">Help</a></li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+              <li id="BCloseSesion">
+                <a class="dropdown-item" onclick="logout()">Log Out</a>
+              </li>
+            </ul>
+          </div>
+        </ul>
+
+        <ul>
+          <!-- Button trigger modal -->
+          <button onclick="ToLogin()" type="button" class="btn" id="BotonLogin">
+            Login
+          </button>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container-fluid py-3">
+      <div class="row">
+        <!-- Columna para el acordeón -->
+        <div class="col-md-8">
+          <div class="accordion-container">
+            <!-- Botones del acordeón -->
+            <div class="accordion-buttons">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseOne"
+                aria-expanded="false"
+                aria-controls="collapseOne"
+              >
+                <img
+                  src="/src/img/icon/book.svg"
+                  alt="Icono 1"
+                  style="width: 24px; height: 24px"
+                />
+              </button>
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseTwo"
+                aria-expanded="false"
+                aria-controls="collapseTwo"
+              >
+                <img
+                  src="/src/img/icon/food.svg"
+                  alt="Icono 2"
+                  style="width: 24px; height: 24px"
+                />
+              </button>
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseThree"
+                aria-expanded="false"
+                aria-controls="collapseThree"
+              >
+                <img
+                  src="/src/img/icon/location.svg"
+                  alt="Icono 3"
+                  style="width: 24px; height: 24px"
+                />
+              </button>
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseFour"
+                aria-expanded="false"
+                aria-controls="collapseFour"
+              >
+                <img
+                  src="/src/img/icon/emotion.svg"
+                  alt="Icono 4"
+                  style="width: 24px; height: 24px"
+                />
+              </button>
+            </div>
+
+            <!------------------------ Contenido del acordeón ---------------------------->
+            <div class="accordion-content">
+              <div
+                class="accordion collapse show"
+                id="collapseOne"
+                data-bs-parent=".accordion-content"
+              >
+                <div class="accordion-body">
+                  <!-- Tracker Section -->
+                  <div class="tracker">
+                    <h1>Tracker</h1>
+                    <p>Add your habit</p>
+                    <div class="tracker-container">
+                      <!-- Ejemplo inicial de un hábito -->
+                    </div>
+                    <!-- Campo de entrada para agregar nuevas tareas -->
+                    <div class="input-group mt-3">
+                      <button
+                        type="button"
+                        class="btn-add"
+                        data-bs-toggle="modal"
+                        data-bs-target="#exampleModal"
+                      >
+                        <!--Boton agregar tracker js ------------------------------------------------------------->
+                        <img
+                          src="/src/img/icon/add.svg"
+                          alt="Add Icon"
+                          style="width: 24px; height: 24px"
+                        />
+                      </button>
+                      
+                    </div>
+                    <div id="spaceTracker">
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!----------------------------------------Buttom Menu--------------------------------------------------->
+              <div
+                class="accordion collapse"
+                id="collapseTwo"
+                data-bs-parent=".accordion-content">
+                <div class="accordion-body">
+
+                  <!--------------   Mostrar Comida ------------------------------------->
+                  <h1>Menu</h1>
+                  <h2>Search Food</h2>
+
+                  <form id="searchForm">
+                    <div class="container" id="container_Search">
+                      <input class="checkbox" type="checkbox" checked="" />
+                      <div class="mainbox">
+                        <div class="iconContainer">
+                          <svg
+                            viewBox="0 0 512 512"
+                            height="1em"
+                            xmlns="http://www.w3.org/2000/svg"
+                            class="search_icon"
+                          >
+                            <path
+                              d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"
+                            ></path>
+                          </svg>
+                        </div>
+                        <input
+                          class="search_input"
+                          id="query"
+                          placeholder="Write the full name"
+                          type="text"
+                        />
+                      </div>
+                    </div>
+                  </form>
+
+                  <div id="results"></div>
+
+                  <div class="d-flex justify-content-center">
+                    <div id="desayuno">
+                      <button
+                        onclick="AddFoodDes()"
+                        class="icon-btn add-btn"
+                        id="plusFoodDes">
+                        <div class="add-icon"></div>
+                        <div class="btn-txt">Add Breakfast</div>
+                      </button>                      
+                    </div>
+                    <div id="Almuerzo">
+                      <button
+                        onclick="AddFoodAlm()"
+                        class="icon-btn add-btn"
+                        id="plusFoodAlm">
+                        <div class="add-icon"></div>
+                        <div class="btn-txt">Add Lunch</div>
+                      </button>
+                    </div>
+                    <div id="Cena">
+                      <button
+                        onclick="AddFoodCen()"
+                        class="icon-btn add-btn"
+                        id="plusFoodCen">
+                        <div class="add-icon"></div>
+                        <div class="btn-txt">Add Dinner</div>
+                      </button>
+                    </div>
+                  </div>
+
+
+                  
+              </div>
+              </div>
+
+              
+              <!-----------------------------------------------Location--------------------------------------------------->
+              <div
+                class="accordion collapse"
+                id="collapseThree"
+                data-bs-parent=".accordion-content">
+                <div class="accordion-body">
+                  <h1>Location</h1>
+                  <p>We recommend these places</p>
+                  <div id="map"></div>
+                  
+                 
+                </div>
+              </div>
+
+              <!---------------------------------------------- Button Emotions ------------------------------>
+              <div
+                class="accordion collapse"
+                id="collapseFour"
+                data-bs-parent=".accordion-content"
+              >
+                <div class="accordion-body">
+                  <div class="emotions">
+                    <h1>Emotions</h1>
+                    <p>How do you feel today?</p>
+                    <div class="emotions-container">
+                      <img
+                        src="/src/img/emotions/emotion-angry.png"
+                        alt="Angry"
+                        class="emotion"
+                        data-active="./src/img/emotions/emotion-angry-active.png"
+                        data-normal="./src/img/emotions/emotion-angry.png"
+                      />
+                      <img
+                        src="/src/img/emotions/emotion-sick.png"
+                        alt="Sick"
+                        class="emotion"
+                        data-active="./src/img/emotions/emotion-sick-active.png"
+                        data-normal="./src/img/emotions/emotion-sick.png"
+                      />
+                      <img
+                        src="/src/img/emotions/emotion-sad.png"
+                        alt="Sad"
+                        class="emotion"
+                        data-active="./src/img/emotions/emotion-sad-active.png"
+                        data-normal="./src/img/emotions/emotion-sad.png"
+                      />
+                      <img
+                        src="/src/img/emotions/emotion-neutral.png"
+                        alt="Neutral"
+                        class="emotion"
+                        data-active="./src/img/emotions/emotion-neutral-active.png"
+                        data-normal="./src/img/emotions/emotion-neutral.png"
+                      />
+                      <img
+                        src="/src/img/emotions/emotion-content.png"
+                        alt="Content"
+                        class="emotion"
+                        data-active="./src/img/emotions/emotion-content-active.png"
+                        data-normal="./src/img/emotions/emotion-content.png"
+                      />
+                      <img
+                        src="/src/img/emotions/emotion-happy.png"
+                        alt="Happy"
+                        class="emotion"
+                        data-active="./src/img/emotions/emotion-happy-active.png"
+                        data-normal="./src/img/emotions/emotion-happy.png"
+                      />
+                      <img
+                        src="/src/img/emotions/emotion-love.png"
+                        alt="Love"
+                        class="emotion"
+                        data-active="./src/img/emotions/emotion-love-active.png"
+                        data-normal="./src/img/emotions/emotion-love.png"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--------------------------------------------- Columna para el To-Do List ------------------------------------------->
+        <div class="col-md-4">
+          <div class="todo-list">
+            <h4>To-Do List</h4>
+            <div class="list-group">
+              <!-- Elemento de lista con casilla de verificación -->
+              <div
+                class="list-group-item d-flex justify-content-between align-items-center"
+              >
+                <label class="custom-checkbox">
+                  <input type="checkbox" id="task1" />
+                  <span class="checkmark"></span>
+                  Ejemplo
+                </label>
+
+                <button class="btn btn-sm btn-danger">Delete</button>
+              </div>
+              
+            </div>
+
+            <!-- Campo de entrada para agregar nuevas tareas -->
+            <div class="input-group mt-3">
+              <input
+                type="text"
+                class="form-control"
+                id="newTask"
+                placeholder="Add new task"
+              />
+              <button class="btn-add" onclick="addTask()">
+                <img
+                  src="/src/img/icon/add.svg"
+                  alt="Icono 2"
+                  style="width: 24px; height: 24px"
+                />
+              </button>
+
+          
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+
+    <!-------------- Modal registro habitoss ----------------------------->
+    <!-- Vertically centered modal -->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">
+              Register your habits
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <!-- Contenido del modal -->
+
+            <form>
+              <div class="mb-3">
+                <label for="exampleInputExercise1" class="form-label"
+                  >Exercise</label>
+                  <select id="exercise" class="form-select" aria-label="Default select example">
+                    <option selected>Select Excercise</option>
+                    <option value="1">Burpies</option>
+                    <option value="2">Plank</option>
+                    <option value="3">Squats</option>
+                    <option value="4">Push-ups</option>
+                    <option value="5">Biceps curl</option>
+                    <option value="6">Lunge</option>
+                  </select>
+                <!--input
+                  type="text"
+                  class="form-control"
+                  id="exampleInputExercise1"
+                  aria-describedby="ExerciseHelp"
+                  placeholder="Exercise type"
+                />
+                <div id="ExerciseHelp" class="form-text">
+                </div-->
+
+                <label id="how" for="timeInput" class="form-label">How Long?</label>
+                <input
+                  type="time"
+                  class="form-control"
+                  id="timeInputhow"
+                  value="12:00"
+                  min="09:00"
+                  max="22:00"
+                  step="3600"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="timeInput" class="form-label">Time Lie Down</label>
+                <input
+                  type="time"
+                  class="form-control"
+                  id="timeInputlie"
+                  value="12:00"
+                  min="09:00"
+                  max="22:00"
+                  step="3600"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="timeInput" class="form-label">Time Wakeup</label>
+                <input
+                  type="time"
+                  class="form-control"
+                  id="timeInputwake"
+                  value="12:00"
+                  min="09:00"
+                  max="22:00"
+                  step="3600"
+                />
+              </div>
+              
+            </form>
+
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+                onclick="addTracker()"
+              >
+                Close
+              </button--->
+              <button onclick="saveHabits()" id="BotonTracker" type="button" class="btn btn-primary">
+                Save habit
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--------------------- Graficas chart.js ------------------------------------------>
+
+    <div class="container text-center" id="containerGrafics">
+      <div class="row align-items-end" id="rowgrafics">
+        <div id="colGrafics1" class="col col-background">
+          <h1>Sleep Report</h1>
+          <h5>Quality report of your sleep.</h5>
+          <div id="FondoRegistro">
+            <div id="texto">
+              <h2>80<h5> Sleep Score</h5></h2>
+            </div>
+            <div>
+              <canvas id="myChartSleep"></canvas>
+            </div>
+          </div>
+        </div>
+        <div id="colGrafics2" class="col Food-background">
+          <div>
+            <canvas id="myChart"></canvas>
+          </div>
+        </div>
+        <div id="colGrafics3" class="col  exercise-background">
+          <div>
+            <canvas id="myChartExercise"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+<!--
+    <button id="showLocalStorage">Mostrar Local Storage</button>
+
+<script>
+document.getElementById('showLocalStorage').addEventListener('click', function() {
+    console.log("Contenido de localStorage:");
+    for (let i = 0; i < localStorage.length; i++) {
+        const key = localStorage.key(i);
+        const value = localStorage.getItem(key);
+        console.log(`${key}: ${value}`);
+    }
+});
+</script-->
+
+    <div id="botonUpdate">
+      <button class="btn btn-update" onclick="updateChart()">        
+        Grafics Exercise Update
+      </button>
+      <!---button class="btn btn-update" onclick="updateSleep()">        
+        Grafics Sleep Update
+      </button>
+      <button class="btn btn-update" onclick="updateFood()">        
+        Grafics Food Update
+      </button--->
+    </div>
+
+    
+    
+<footer class="footer">
+  <div class="waves">
+      <div class="wave" id="wave1"></div>
+      <div class="wave" id="wave2"></div>
+      <div class="wave" id="wave3"></div>
+      <div class="wave" id="wave4"></div>
+  </div>
+  <ul class="social-icon">
+      <li class="social-icon__item"><a class="social-icon__link" href="#"><ion-icon
+                  name="logo-facebook"></ion-icon></a></li>
+      <li class="social-icon__item"><a class="social-icon__link" href="#"><ion-icon
+                  name="logo-twitter"></ion-icon></a></li>
+      <li class="social-icon__item"><a class="social-icon__link" href="#"><ion-icon
+                  name="logo-linkedin"></ion-icon></a></li>
+      <li class="social-icon__item"><a class="social-icon__link" href="#"><ion-icon
+                  name="logo-instagram"></ion-icon></a></li>
+  </ul>
+  <ul class="menu">
+      <li class="menu__item"><a class="menu__link" href="#">Home</a></li>
+      <li class="menu__item"><a class="menu__link" href="#">About Us</a></li>
+      <li class="menu__item"><a class="menu__link" href="#">Information</a></li>
+  </ul>
+  <p>&copy;2024 Syncsavid | All Rights Reserved</p>
+</footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/src/js/emotions.js"></script>
+    <script src="/src/js/inicio.js"></script>
+    <script src="/src/js/modal.js"></script>
+    <script src="/src/js/Graficas.js"></script>
+    <script src="/src/js/todolist.js"></script>
+    <script type="module" src="/src/js/location.js"></script>
+    <script src="/src/js/searchFood.js"></script>
+    <!--script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script-->
+
+<script
+                  async
+                  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDieGvTRG7H1PivYYHyOIDwd1O0GhRsqOE&loading&callback=initMap"
+                    ></script> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="/src/js/maps.js"></script>
+<script src="/src/js/tracker.js"></script>
+  </body>
+</html>
+
+<!--Key = AIzaSyDieGvTRG7H1PivYYHyOIDwd1O0GhRsqOE  -->

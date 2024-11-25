@@ -1,0 +1,111 @@
+/*navbar*/
+  .navbar {
+    background-color: #2E256B; /* Fondo personalizado */
+    color: #fff; /* Texto blanco */
+    text-align: center;
+    padding-bottom: 1.5rem;
+    padding-top: 1.5rem;
+}
+
+.navbar .container-fluid {
+    display: flex;
+    justify-content: center; /* Centra todo el contenido horizontalmente */
+    align-items: center; /* Opcional: centra verticalmente si la altura varía */
+}
+
+.navbar-brand {
+    margin-right: auto; /* Mantén el brand alineado al centro */
+}
+
+.collapse {
+    justify-content: center; /* Centra los elementos colapsados */
+}
+
+.navbar-nav {
+    display: flex;
+    justify-content: center; /* Centra las opciones del menú horizontalmente */
+}
+
+.form-control {
+    margin: 0 10px; /* Espaciado entre el input y el botón */
+}
+
+.dropdown{
+    display: none;
+}
+
+.dropdown{
+    margin-right: 5rem !important;
+}
+
+.dropdown-menu{
+    background-color: #F5F2FB;
+}
+
+.dropdown-item{
+    padding: none;
+}
+
+.nav-link{
+    height: 30px;
+}
+
+#logUser{
+    width: 30px !important;
+    background-color: #F5F2FB !important;
+    border-radius: 2rem;
+}
+
+#logUser:hover{
+    color: #fff;
+}
+#user{
+    height: 40px;
+}
+
+#BotonLogin{
+    margin-right: 5rem !important;
+}
+
+#userActivity{
+    display: block;
+}
+
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #2E256B; /* Color de fondo */
+    padding: 10px 40px; /* Espaciado interno */
+    position: fixed; /* Mantener fijo en la parte superior */
+    top: 0; /* Posición en la parte superior */
+    left: 0; /* Alinear a la izquierda */
+    width: 80%; /* Ancho completo */
+    z-index: 1000; /* Asegúrate de que sea alto para estar encima del contenido */
+}
+
+
+.logo img {
+    width: 140px;
+    /* Ajusta el tamaño del logotipo aquí */
+    height: auto;
+    /* Mantiene la proporción de la imagen */
+    margin-right: 5px;
+    /* Espacio entre el logo y la navegación */
+}
+
+.icons-container {
+    display: flex;
+    /* Alinea los iconos horizontalmente */
+    align-items: center;
+    /* Alinea verticalmente los iconos */
+}
+
+.search-icon img,
+.buy-icon img {
+    width: 20px;
+    /* Ajusta el tamaño de los iconos */
+    margin-left: 10px;
+    /* Espacio entre los iconos */
+}

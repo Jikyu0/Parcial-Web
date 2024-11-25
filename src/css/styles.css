@@ -1,0 +1,76 @@
+/* Estilos globales */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    font-family: "Poppins", sans-serif; /* Tipografía base */
+    font-size: 12px; /* Tamaño de fuente predeterminado */
+    background-color: #F5F2FB !important; /* Color de fondo */
+}
+
+/* Títulos */
+h1 {
+    font-family: "Poppins", sans-serif; /* Asegúrate de usar Poppins */
+    font-size: 50px;
+    font-weight: 800; /* Peso de la fuente para h1 */
+}
+
+/* Párrafos */
+p {
+    font-family: "Poppins", sans-serif; /* Asegúrate de usar Poppins */
+    font-size: 14px; /* Tamaño de fuente predeterminado para párrafos */
+}
+
+/* Clases específicas para estilos adicionales */
+.poppins-bold {
+    font-family: "Poppins", serif; /* Cambia a serif si es necesario */
+    font-weight: 700; /* Peso para títulos o texto destacado */
+}
+
+.poppins-light {
+    font-family: "Poppins", serif; /* Cambia a serif si es necesario */
+    font-weight: 300; /* Peso ligero para párrafos o texto secundario */
+}
+
+/* Flexibles */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+
+#about-us h1 {
+    font-size: 36px; /* Aumenta el tamaño del título */
+    font-weight: 800; /* Asegúrate de que sea bold */
+    color: #2E256D;
+}
+
+#about-us img {
+    width: 100%; /* Ajusta el porcentaje según sea necesario */
+    max-width: 500px; /* Establece un ancho máximo si es necesario */
+    height: auto; /* Mantiene la proporción de la imagen */
+    margin-left: 80px; /* Ajusta este valor para mover la imagen a la derecha */
+}
+
+/*
+.modal {
+
+z-index: 1050; *//* Asegúrate de que esté por encima del footer *//*
+    margin-bottom: 200px; *//* Ajusta este valor según la altura de tu footer *//*
+}
+*/

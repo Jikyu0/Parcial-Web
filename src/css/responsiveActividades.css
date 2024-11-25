@@ -1,0 +1,84 @@
+
+
+/* Navbar styles */
+.navbar {
+    padding: 1rem;
+}
+
+/* Logo styles */
+.logo img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Accordion button styles */
+.accordion-buttons button {
+    width: 100%;
+    margin: 0.5rem 0;
+}
+
+/* Tracker section */
+.tracker {
+    padding: 1rem;
+}
+
+/* To-Do List styles */
+.todo-list {
+    padding: 1rem;
+}
+
+/* Responsive images */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Map styles */
+#map {
+    height: 250px;
+    width: 100%; /* Full width on smaller screens */
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+    /* Adjust navbar items and buttons for smaller screens */
+    .navbar .container-fluid {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    /* Adjust accordion titles for better spacing */
+    .accordion-body h1 {
+        font-size: 1.5rem; /* Smaller font size on mobile */
+    }
+
+    /* Stack To-Do List items vertically */
+    .todo-list .list-group-item {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 1rem;
+    }
+
+    /* Adjust modal dialog size on mobile */
+    .modal-dialog {
+        max-width: 90%; /* Allow modal to be wider on small screens */
+        margin: auto; /* Center the modal */
+    }
+
+    canvas {
+        width: auto !important; /* Force canvas to take full width */
+        height: auto !important; /* Maintain aspect ratio */
+    }
+}
+
+@media (max-width: 576px) {
+    /* Further adjustments for very small screens */
+    h1, h4 {
+        font-size: 1.25rem; /* Smaller headings on extra small devices */
+    }
+
+    .btn-add, .btn-update {
+        width: 100%; /* Full width buttons on mobile */
+        margin-top: 1rem; /* Space between buttons */
+    }
+}

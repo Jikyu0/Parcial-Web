@@ -1,0 +1,18 @@
+.container {
+    display: flex; /* Utiliza Flexbox para las columnas */
+    justify-content: space-between; /* Espacio entre columnas */
+}
+
+.column {
+    flex: 1; /* Cada columna ocupa el mismo espacio */
+    margin: 10px; /* Espaciado entre columnas */
+}
+
+.mapa {
+    max-width: 400px; /* Ancho máximo para la columna del mapa */
+}
+
+.recomendaciones {
+    flex-grow: 2; /* La columna de recomendaciones puede crecer más */
+}
+

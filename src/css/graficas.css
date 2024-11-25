@@ -1,0 +1,86 @@
+#colGrafics2{
+    width: 1000px;
+    height: auto;
+    margin-left: 60px;
+}
+
+#colGrafics1 h1, h5{
+    color: #fff;
+}
+
+#colGrafics3{
+    margin-top: 50px;
+    height: 650px;
+}
+
+.col-background {
+    background-image: url(/src/img/fondo/3878824.jpg); /* Color de fondo */
+    background-size: cover;
+    color: rgb(0, 0, 0); /* Color del texto */
+    padding: 20px; /* Espaciado interno */
+    width: 1000px;
+    height: 450px; /* Asegúrate de que la columna ocupe todo el alto disponible */
+    border-radius: 2rem;
+}
+
+.Food-background{
+    background-image: url(/src/img/fondo/abstract-fantasy-landscape-with-color-year-purple-tones.jpg); /* Color de fondo */
+    background-size: cover;
+    color: rgb(0, 0, 0); /* Color del texto */
+    padding: 20px; /* Espaciado interno */
+    width: 1000px;
+    height: 400px; /* Asegúrate de que la columna ocupe todo el alto disponible */
+    border-radius: 2rem;
+}
+
+.exercise-background{
+    background-image: url(/src/img/fondo/color-year-purple-tones-abstract-landscape-with-fantasy-aesthetic.jpg); /* Color de fondo */
+    background-size: cover;
+    color: rgb(0, 0, 0); /* Color del texto */
+    padding: 20px; /* Espaciado interno */
+    width: 1000px;
+    height: 400px; /* Asegúrate de que la columna ocupe todo el alto disponible */
+    border-radius: 2rem;
+    
+}
+
+
+
+#FondoRegistro h5{
+    color: #000000;
+}
+
+
+#myChart{
+    width: 400px !important;
+    height: auto !important;    
+    margin-left: 70px;
+}
+
+#myChartSleep{
+    width: auto !important;
+    height: 200px !important;
+    padding-left: 10px;
+    margin-left: 40px;
+}
+
+#containerGrafics{
+    width: 100% !important;
+   
+
+}
+
+#myChartExercise{
+    width: auto !important;
+    height: auto !important;
+}
+
+#FondoRegistro{
+    /*background-image: url();*/
+    background-color: rgb(255, 255, 255);
+    border-radius: 2rem;
+    margin-top: 30px;
+    height: 70%;
+    
+}
+

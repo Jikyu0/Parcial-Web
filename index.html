@@ -1,0 +1,225 @@
+<!--Authors: -Yuliana Mejía (92583)
+-Santiago Fonseca (89439)
+-Valentina Betancourt Bolaños (80221)
+
+Date Creation: 23/11/2024 - 11:00 am
+
+Last Modification: 25/11/2024 - 3:30 am
+
+Nota: Algunos codigos fueron basados en diseños educativos de youtube Link: https://www.tiktok.com/@hellocodelab/video/7199943200579046683?_t=8rdlYDgFxiS&_r=1
+-->
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <!-- Meta tags y configuración general -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Syncsavid</title>
+
+    <!-- Enlaces de estilos y fuentes -->
+    <link rel="icon" href="/src/img/icon/icono.png" type="image/x-icon">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/src/css/styles.css">
+    <link rel="stylesheet" href="/src/css/header.css">
+    <link rel="stylesheet" href="/src/css/footer.css">
+    <link rel="stylesheet" href="/src/css/banner.css">
+    <link rel="stylesheet" href="/src/css/button.css">
+    <link rel="stylesheet" href="/src/css/carousel.css">
+    <link rel="stylesheet" href="/src/css/responsive.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+
+
+    <!--Tipografia-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Header con navegación -->
+
+    <!--
+    <header class="" style="height: 60px;">
+        <div class="icons-container">
+            <div class="search-icon">
+                <a href="#"><img src="./src/img/icon/IconamoonHomeBold.svg" alt="Buscar"></a>
+            </div>
+        </div>
+
+        <div class="logo">
+            <img src="./src/img/icon/logo.png" alt="Logotipo">
+        </div>
+
+        <div--->
+    <!-- Button trigger modal -->
+    <!--button type="button" class="btn btn-primary">
+                <a href="/Registro_Login.html">Login</a>
+            </button>
+        </div>
+    </header-->
+
+
+    <nav class="navbar navbar-expand-lg ">
+        <div class="container-fluid">
+            <div class="search-icon">
+                <a href="#"><img src="/src/img/icon/IconamoonHomeBold.svg" alt="Buscar"></a>
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                <form class="d-flex" role="search">
+                    <div class="logo">
+                        <img src="/src/img/icon/logo.png" alt="Logotipo">
+                    </div>
+                </form>
+
+
+            </div>
+
+            <ul>
+                <div class="dropdown" id="user">
+                    <button class="btn dropdown-toggle" onclick="modaldisplay()" type="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        <img id="logUser" src="/src/img/icon/avatar-de-mujer.png" alt="user">
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li id="BPerfil"><a class="dropdown-item" href="">Profile</a></li>
+                        <li id="BAyuda"><a class="dropdown-item" href="">Help</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li id="BCloseSesion"><a class="dropdown-item" onclick="logout()">Log Out</a></li>
+                    </ul>
+                </div>
+            </ul>
+
+            <ul>
+                <!-- Button trigger modal -->
+                <button onclick="ToLogin()" type="button" class="btn btn-primary" id="BotonLogin">Login</button>
+            </ul>
+
+        </div>
+    </nav>
+
+
+    <!-- Carrusel con contenido superpuesto -->
+    <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+        <!-- Contenido superpuesto -->
+        <div class="carousel-caption-custom">
+            <h2>"Every small step counts on the journey to a balanced and healthy life."</h2>
+            <p>This is your space to organize, get inspired, and move toward the well-being you deserve.</p>
+            <a onclick="verifyAccountInicio()" class="btn">Get Started for Free</a>
+        </div>
+
+        <!-- Imágenes del carrusel -->
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="./src/img/banner/banner1.jpg" class="d-block w-100" alt="Imagen 1">
+            </div>
+            <div class="carousel-item">
+                <img src="/src/img/banner/banner2.jpg" class="d-block w-100" alt="Imagen 2">
+            </div>
+            <div class="carousel-item">
+                <img src="/src/img/banner/banner3.jpg" class="d-block w-100" alt="Imagen 3">
+            </div>
+        </div>
+
+        <!-- Controles del carrusel -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        </button>
+    </div>
+
+
+    <!-- Sección About Us -->
+    <section id="about-us" class="py-5">
+        <div class="container">
+            <h1 class="poppins-bold">About Us</h1>
+            <div class="row align-items-center">
+                <!-- Columna del párrafo -->
+                <div class="col-md-6">
+
+                    <p>
+                        Welcome to our platform! We’re thrilled to provide you with a space designed to help you monitor
+                        and improve your daily habits while staying organized and motivated.
+                        Think of it as your personal digital bullet journal—everything you need to track your meals,
+                        exercise routines, sleep hours, and more—all in one place.
+                    </p>
+                    <p>
+                        To encourage consistency and inspire new habits, we’ve added a “streak system” that rewards you
+                        for achieving your goals.
+                        Our geolocation feature also helps you discover nearby activities, like fitness groups or hiking
+                        trails, making it easier than ever
+                        to embrace a healthy and active lifestyle.
+                    </p>
+                </div>
+                <!-- Columna de la imagen -->
+                <div class="col-md-6 text-center">
+                    <img src="/src/img/aboustUs/aboutus.jpg" class="img-fluid rounded" alt="About Us Image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- boton que muestra la informacion-->
+
+
+    <div><br><br><br><br>
+        <div>
+
+            <!-- Footer -->
+            <footer class="footer">
+                <div class="waves">
+                    <div class="wave" id="wave1"></div>
+                    <div class="wave" id="wave2"></div>
+                    <div class="wave" id="wave3"></div>
+                    <div class="wave" id="wave4"></div>
+                </div>
+                <ul class="social-icon">
+                    <li class="social-icon__item"><a class="social-icon__link" href="#"><ion-icon
+                                name="logo-facebook"></ion-icon></a></li>
+                    <li class="social-icon__item"><a class="social-icon__link" href="#"><ion-icon
+                                name="logo-twitter"></ion-icon></a></li>
+                    <li class="social-icon__item"><a class="social-icon__link" href="#"><ion-icon
+                                name="logo-linkedin"></ion-icon></a></li>
+                    <li class="social-icon__item"><a class="social-icon__link" href="#"><ion-icon
+                                name="logo-instagram"></ion-icon></a></li>
+                </ul>
+                <ul class="menu">
+                    <li class="menu__item"><a class="menu__link" href="#">Home</a></li>
+                    <li class="menu__item"><a class="menu__link" href="#">About Us</a></li>
+                    <li class="menu__item"><a class="menu__link" href="#">Information</a></li>
+                </ul>
+                <p>&copy;2024 Syncsavid | All Rights Reserved</p>
+            </footer>
+
+
+            <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+            <!-- JavaScript -->
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+            <script src="/src/js/products.js"></script>
+            <script src="/src/js/inicio.js"></script>
+            <script src="/src/js/modal.js"></script>
+</body>
+
+</html>

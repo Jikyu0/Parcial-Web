@@ -1,0 +1,97 @@
+/* apariencia del to do list */
+.todo-list {
+    border-left: 2px solid #2E256D;
+    background-color: #F5E5EC; /* Fondo opcional */
+    padding: 80px; /* Espaciado interno */
+
+}
+
+/* Espaciado entre los elementos de la lista */
+.list-group-item {
+    margin-bottom: 10px; /* Espacio entre los elementos */
+}
+
+/* Estilo para el botón personalizado */
+.btn-add {
+    background-color: #2E256D; /* Color de fondo */
+    border: none; /* Sin borde */
+    border-radius: 8px; /* Bordes redondeados */
+    padding: 10px; /* Espaciado interno */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    transition: background-color 0.3s ease; /* Transición suave para el color de fondo */
+}
+
+/* Efecto al pasar el ratón por encima */
+.btn-add:hover {
+    background-color: #5e4ec1; /* Cambia a un color más claro al pasar el ratón */
+}
+
+/* Estilo para la imagen dentro del botón */
+.btn-add img {
+    width: 20px; /* Ajusta el tamaño de la imagen */
+    height: auto; /* Mantiene la proporción de la imagen */
+}
+
+.todo-list {
+    text-align: center; /* Centra el texto horizontalmente */
+    margin-bottom: 20px; /* Espaciado inferior opcional */
+}
+
+
+
+/*Boton checkbox*/
+
+/* Oculta el checkbox original */
+.custom-checkbox input[type="checkbox"] {
+    display: none; /* Oculta el checkbox */
+}
+
+/* Estilo del contenedor del checkbox */
+.custom-checkbox {
+    position: relative;
+    padding-left: 30px; /* Espacio para el checkmark */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    user-select: none; /* Evita la selección de texto */
+}
+
+/* Estilo del checkmark */
+.custom-checkbox .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+   
+    background-color: #eee; /* Color de fondo por defecto */
+    border-radius: 4px; /* Bordes redondeados */
+    border: 3px solid #2E256D;
+}
+
+/* Efecto cuando está marcado */
+.custom-checkbox input[type="checkbox"]:checked + .checkmark {
+    background-color: #2E256D; /* Color cuando está marcado */
+}
+
+/* Estilo para la marca de verificación */
+.custom-checkbox .checkmark::after {
+    content: "";
+    position: absolute;
+    display: none; /* Oculto por defecto */
+}
+
+/* Mostrar la marca de verificación cuando está marcado */
+.custom-checkbox input[type="checkbox"]:checked + .checkmark::after {
+    display: block; /* Muestra la marca de verificación */
+}
+
+/* Estilo para la marca de verificación (Chulito) */
+.custom-checkbox .checkmark::after {
+    left: 6px;
+    top: 2px;
+    width: 5px;
+    height: 10px;
+    border: solid white; /* Color de la marca de verificación */
+    border-width: 0 2px 2px 0; /* Formato de la marca */
+    transform: rotate(45deg); /* Rotar para formar una "V" */
+}
+
